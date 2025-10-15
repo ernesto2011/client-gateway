@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { envs, PRODUCT_SEVICE } from './config';
 import { ProductsController } from './products/products.controller';
+import { OrdersModule } from './orders/orders.module';
 
 @Module({
   controllers: [ProductsController],
@@ -17,6 +18,7 @@ import { ProductsController } from './products/products.controller';
         }
        },
     ]),
+    OrdersModule,
   ],
 })
 export class AppModule {}
